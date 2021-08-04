@@ -43,14 +43,23 @@ int in4 = 2;
 int trigPin = 8;
 int echoPin = 7;
 
-// other variables
-int speed = 128;
+// other constants
+int speed = 204;
 float speedOfSound = 0.034;
+float turnDistance = 30; // in cm
+
+// other variables
+float obstacleDistance;
+
+// variables for alternating turns
+bool toggleReferenceTime = true;
+unsigned long referenceTime, elapsedTime;
+int minForwardTime = 500;
+bool directionRight = true;
+bool hasTurned = false;
 
 void setup()
 {
-  Serial.begin(9600);
-
   pinMode(enA, OUTPUT);
   pinMode(enB, OUTPUT);
   pinMode(in1, OUTPUT);
@@ -62,28 +71,28 @@ void setup()
   pinMode(echoPin, INPUT);
 }
 
-void setLeftMotorForward()
-{
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
-}
-
-void setLeftMotorBackward()
+void setRightMotorForward()
 {
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
 }
 
-void setRightMotorForward()
+void setRightMotorBackward()
 {
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
 }
 
-void setRightMotorBackward()
+void setLeftMotorForward()
 {
   digitalWrite(in3, HIGH);
   digitalWrite(in4, LOW);
+}
+
+void setLeftMotorBackward()
+{
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
 }
 
 void setSpeed()
@@ -106,17 +115,17 @@ void moveBackward()
   setSpeed();
 }
 
-void turnLeft()
-{
-  setLeftMotorBackward();
-  setRightMotorForward();
-  setSpeed();
-}
-
 void turnRight()
 {
   setLeftMotorForward();
   setRightMotorBackward();
+  setSpeed();
+}
+
+void turnLeft()
+{
+  setLeftMotorBackward();
+  setRightMotorForward();
   setSpeed();
 }
 
@@ -128,6 +137,26 @@ void stop()
   digitalWrite(in4, LOW);
 }
 
+void testDirections()
+{
+  moveForward();
+  delay(5000);
+  stop();
+  delay(2000);
+  moveBackward();
+  delay(5000);
+  stop();
+  delay(2000);
+  turnRight();
+  delay(5000);
+  stop();
+  delay(2000);
+  turnLeft();
+  delay(5000);
+  stop();
+  delay(2000);
+}
+
 float ultraSonicMeasure()
 {
   // generate 10-microsecond pulse to TRIG pin
@@ -136,16 +165,70 @@ float ultraSonicMeasure()
   digitalWrite(trigPin, LOW);
 
   // measure duration of pulse from ECHO pin
-  float duration_us = pulseIn(echoPin, HIGH);
+  float duration = pulseIn(echoPin, HIGH);
 
-  // calculate the distance
-  float distance_cm = (speedOfSound * duration_us) / 2;
+  // calculate the distance in cm
+  float distance = (speedOfSound * duration) / 2;
 
-  return distance_cm;
+  return distance;
+}
+
+void moveAvoidObstacles()
+{
+  obstacleDistance = ultraSonicMeasure();
+  if (obstacleDistance <= turnDistance)
+  {
+    turnRight();
+  }
+  else
+  {
+    moveForward();
+  }
+}
+
+void complexMoveAvoidObstacles()
+{
+  obstacleDistance = ultraSonicMeasure();
+  if (obstacleDistance <= turnDistance)
+  {
+    if (directionRight)
+    {
+      turnRight();
+    }
+    else if (!directionRight)
+    {
+      turnLeft();
+    }
+
+    referenceTime = millis();
+
+    hasTurned = true;
+  }
+  else
+  {
+    moveForward();
+
+    if (hasTurned)
+    {
+      if (toggleReferenceTime)
+      {
+        referenceTime = millis();
+        toggleReferenceTime = false;
+      }
+
+      elapsedTime = millis() - referenceTime;
+      if (elapsedTime >= minForwardTime)
+      {
+        directionRight = !directionRight;
+        toggleReferenceTime = true;
+        hasTurned = false;
+      }
+    }
+  }
 }
 
 void loop()
 {
-
+  complexMoveAvoidObstacles();
 }
 ```
