@@ -10,22 +10,19 @@ My project is an obstacle avoiding robot. It is a car-like robot equipped with a
 # Final Milestone
  
 
-[![Final Milestone]
 
 # Second Milestone
 My second milestone was adding the ultrasonic sensor to the robot and programming the robot to avoid obstacles using the sensor's capabilities. I first programmed the ultrasonic sensor to sense how far away objects were and tested that it worked. I also put tape around each of the robot's wheels to lessen the friction between the the wheels and the ground. The robot had trouble turning without the tape, but turning was smooth with the tape. Then, I added the ultrasonic sensor to the robot and wrote code for the robot to avoid obstacles. I tested this with the robot, and it worked! Finally, I wrote code for the robot to alternate the direction it turned for each obstacle it encountered. This was more complicated that I initially thought, but after a lot of thinking and testing, I was able to get it to work.
 
-[![Second Milestone]
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/60f36BvJsg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # First Milestone
 My first milestone was wiring the initial components for the robot and writing code to get them working. First, I wired the motor controller with two motors and the Arduino. Next, I ran demo code I found from a tutorial to test that the components worked. Then, I wrote code to run the motors so that they would make the robot move forwards, move backwards, turn left, and turn right.
 
-[![First Milestone]
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/7vULrbBvDaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Circuit Diagram
-![motor circuit](https://user-images.githubusercontent.com/57155887/127692518-d34dd873-4641-4be8-a0a7-444d6f4f4f0d.png)
+![motor circuit](https://user-images.githubusercontent.com/57155887/128399452-40fbbfae-4158-4255-9c41-0c4fe3b1fa13.png)
 
 # Code
 ```Arduino
