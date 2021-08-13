@@ -10,6 +10,7 @@ My project is an obstacle avoiding robot. It is a car-like robot equipped with a
 # Presentation
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7R9eO95h3bM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 # Final Milestone
 My final milestone was building a robotic arm and programming bluetooth control for the robot. Building the robotic arm took a lot of work. The robot arm connected to an Arduino Shield attached to an Arduino Uno, which was connected to an Arduino bluetooth module. Once I finished it, I moved on to creating bluetooth control. The robotic arm kit already had pre-made code and a pre-made mobile app for bluetooth control, so I did not have to build those things myself. Once I got bluetooth control to work for the arm, I worked on using an ESP32 for the car robot in place of the Arduino Uno because the ESP32 had bluetooth capabilities while the Arduino Uno did not. My plan was to only use the ESP32 for both the car robot and the robotic arm. Unfortunately, I could not get the ESP32 to connect to my computer even after hours of troubleshooting. Instead, I decided to use the Arduino Shield, Uno, and bluetooth module mentioned earlier. Then, I got to work on mounting the robot arm on top of the car robot and re-wiring all the wires. Once I was done with that, I created a simple mobile app using MIT App Inventor to control the robot. The app can connect to the robot through bluetooth and allows me to control the robot to start and stop. Finally, I combined my code for the car robot and the pre-made code for the robotic arm together so I could control both parts of the robot without having to upload different code files to the Arduino. It did not work at first, but I persevered, debugged the code, and got it to work.
 
@@ -18,10 +19,15 @@ My second milestone was adding the ultrasonic sensor to the robot and programmin
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60f36BvJsg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 # First Milestone
 My first milestone was wiring the initial components for the robot and writing code to get them working. First, I wired the motor controller with two motors and the Arduino. Next, I ran demo code I found from a tutorial to test that the components worked. Then, I wrote code to run the motors so that they would make the robot move forwards, move backwards, turn left, and turn right.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7vULrbBvDaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+# Reflection
+Through building this project, I learned that taking small steps at a time is a good thing. Initially, I took small steps in building my robot, such as testing the motor controller and the ultrasonic sensor. Once I tested that the different components worked, then I put them all together. If I took too much of a big step, and there is a good change that it would not work. I also learned that perseverance is important. If I did not persevere through the bugs in the code when I programmed bluetooth control, I would not have been able to finish my modification.
 
 # Circuit Diagram
 ![motor circuit](https://user-images.githubusercontent.com/57155887/128399452-40fbbfae-4158-4255-9c41-0c4fe3b1fa13.png)
