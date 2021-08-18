@@ -30,7 +30,7 @@ My first milestone was wiring the initial components for the robot and writing c
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7vULrbBvDaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Reflection
-Through building this project, I learned that taking small steps at a time is a good thing. Initially, I took small steps in building my robot, such as testing the motor controller and the ultrasonic sensor. Once I tested that the different components worked, then I put them all together. If I took too much of a big step, and there is a good change that it would not work. I also learned that perseverance is important. If I did not persevere through the bugs in the code when I programmed bluetooth control, I would not have been able to finish my modification.
+Through building this project, I learned that taking small steps at a time is a good thing. Initially, I took small steps in building my robot, such as testing the motor controller and the ultrasonic sensor. Once I tested that the different components worked, I put them all together. If I took too much of a big step, there would be a good chance that it would not work. I also learned that perseverance is important. If I did not persevere through the bugs in the code when I programmed bluetooth control, I would not have been able to finish my modification.
 
 # Circuit Diagram
 ![motor circuit](https://user-images.githubusercontent.com/57155887/129510820-8b0c9bea-c161-4c08-8152-74fa030df2b7.png)
