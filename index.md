@@ -7,9 +7,9 @@ My project is an obstacle avoiding robot. It is a car-like robot equipped with a
 
 ![Headstone Image](https://user-images.githubusercontent.com/57155887/129388210-3451fbc2-02ac-45d5-bdfa-0635ccae48ef.JPG)
 
-![GIF 1](https://github.com/AntonioCuan/Antonio_Robot_BSE_Portfolio/blob/gh-pages/robot%20gif%201.gif)
+GIF 1: https://github.com/AntonioCuan/Antonio_Robot_BSE_Portfolio/blob/gh-pages/robot%20gif%201.gif
 
-![GIF 2](https://github.com/AntonioCuan/Antonio_Robot_BSE_Portfolio/blob/gh-pages/robot%20gif%202.gif)
+GIF 2: https://github.com/AntonioCuan/Antonio_Robot_BSE_Portfolio/blob/gh-pages/robot%20gif%202.gif
 
 # Presentation
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7R9eO95h3bM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
